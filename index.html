@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="quote-box">  
+        <h2>Quote of the day</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading...</span>
+        
+        <div>
+            <button id="newQuote" onclick="getQuote(api_url)">New Quote</button>
+            <button onclick="tweet()"><img src="images/twitter.png"> Tweet</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    const quote = document.getElementById('quote');
+    const author = document.getElementById('author');
+    // const newQuoteButton = document.getElementById('newQuote');
+    
+    const api_url = 'https://dummyjson.com/quotes/random';
+
+    async function getQuote(url) {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            quote.innerHTML = data.quote ?? "Quote not available";
+            author.innerHTML = data.author ? `${data.author}` : "Unknown author";
+        } catch (error) {
+            quote.innerHTML = "Failed to fetch quote.";
+            author.innerHTML = "";
+        }
+    }
+    getQuote(api_url);
+
+    function tweet() {
+        const tweetText = `${quote.innerHTML} ---- by ${author.innerHTML}`;
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`, 'Tweet Window', 'width=600,height=400');
+    }
+
+   
+
+    // newQuoteButton.addEventListener ('click', function (event) {
+    //     getQuote(api_url);
+    // });
+
+
+    
+    // newQuoteButton.addEventListener('click', () => {
+    //     getQuote(api_url);
+    // });
+
+</script>
+
+</html>
