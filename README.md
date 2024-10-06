@@ -32,6 +32,7 @@
 
 
 ```HTML
+html
 <div class="quote-box">  
     <h2>Quote of the day</h2>
     <blockquote id="quote">Loading...</blockquote>
@@ -46,6 +47,7 @@
 
 
 ```JavaScript
+javascript
 const quote = document.getElementById('quote');
 const author = document.getElementById('author');
 const api_url = 'https://dummyjson.com/quotes/random';
