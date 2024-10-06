@@ -1,6 +1,6 @@
-Quote of the Day
-Overview
-The Quote of the Day application fetches and displays a random inspirational quote from an API. Users can generate a new quote at the click of a button and share it directly on Twitter. This app is designed to inspire and motivate users with fresh quotes every day.
+## Quote of the Day
+**Overview** -
+    The Quote of the Day application fetches and displays a random inspirational quote from an API. Users can generate a new quote at the click of a button and share it directly on Twitter. This app is designed to inspire and motivate users with fresh quotes every day.
 
 ## Features
 - Fetches a random quote from the API.
